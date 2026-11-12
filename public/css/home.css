@@ -20,16 +20,202 @@
     height: 50px;
     display: flex;
     flex-direction: row;
-
+    justify-content: space-between;
     
 }
 .navbar_top .nav_search_frame{
     width: 651px;
     height: 50px;
     border-radius: 6px;
+    display: flex;
+    flex-direction: row;
     background: rgba(255, 255, 255, 1);
 }
+.nav_search_frame .search_box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 17px;
+}
+.category_list select{
+    width: 140px; 
+    height: 30px;
+    border: none;
+    outline: none;
+    color: rgba(98, 105, 116, 1);
+    font-family: "Jost";
+    font-style: Regular;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+    text-transform: capitalize;
+}
+.search_box .category_list{
+    /* categories */
+    width: 166px; 
+    height: 30px;
+    border-right: 1px solid rgba(255, 255, 255, 1);
+}
+.search_box input{
+    /* Search products… */
+    margin-left: 12px;
+    width: 387px;
+    height: 22px;
+    border: none;
+    outline: none;
+    color: rgba(98, 105, 116, 1);
+    font-family: "Jost";
+    font-style: Regular;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.nav_search_frame .search_icon_box{
+    /* Rectangle 4 */
+    width: 49.81px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 6px 6px 0px;
+    background: rgba(245, 195, 75, 1);
+}
+.navbar_top .nav_top_menu{
+    /* right-box */
+    
+    width: 416.87px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav_top_menu .top_menu_box{
+    display: flex;
+    flex-direction: row;
+}
+.top_menu_box .box_icon_box{
+    /* Rectangle 5 */
+    position: relative;
+    width: 54px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box_icon_box img{
+    width: 22px;
+    height: 22px;
 
+}
+.top_menu_box .box_info_box{
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    justify-content: flex-end;
+}
+.box_info_box span{
+    color: rgba(255, 255, 255, 1);
+    font-family: "Jost";
+    font-style: Regular;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.box_info_box strong{
+    color: rgba(255, 255, 255, 1);
+    font-family: "Jost";
+    font-style: Regular;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.box_icon_box .basket_count{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(245, 195, 75, 1);
+    border-radius: 50%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Jost";
+    font-style: Bold;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: left;
+
+}
 .navbar_frame .container .navbar_bott{
+    border-top: 1px solid #5747a2;
+    margin-top: 20px;
+
+}
+.navbar_bott .navbat_bott_menu_box{
+    margin-top: 10px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.navbar_bott .browse_box{
+    width: 185px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-right: 1px solid #5747a2;
+}
+.browse_box immg{
+    width: 20px;
+    height: 18px;
+}
+.browse_box span{
+    color: rgba(255, 255, 255, 1);
+    margin-left: 10px;
+    font-family: "Jost";
+    font-style: Medium;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.navbat_bott_menu_box .navbar_route_menu{
+    width: 670px;
+    display: flex;
+    flex-direction: row;
+}
+.navbar_route_menu a{
+    font-family: "Jost";
+    font-style: Medium;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    margin-right: 10px;
+}
+.navbar_route_menu a.title{
+    color: #f5c34b;
+}
+.sorting_menu span{
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 1);
+    font-family: "Jost";
+    font-style: Medium;
+    font-size: 16px;
+    font-weight: 500;
 
 }
