@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenmart - Shop All Products</title>
+    <link rel="stylesheet" href="../public/css/command.css">
+    <link rel="stylesheet" href="../public/css/product.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar_frame">
+        <div class="container">
+            <div class="navbar_top">
+                <a href="../index.html">
+                    <img src="../public/images/icons/logo.png" alt="Zenmart">
+                </a>
+                <div class="nav_search_frame">
+                    <div class="search_box">
+                        <div class="category_list">
+                            <select id="navCategorySelect">
+                                <option value="all" selected>All Categories</option>
+                                <option value="laptops">Laptops &amp; Computers</option>
+                                <option value="tv">TV &amp; Home Theatre</option>
+                                <option value="headphones">Headphones</option>
+                                <option value="watches">Smart Watches</option>
+                            </select>
+                        </div>
+                        <input type="text" id="shopSearchInput" placeholder="Search products...">
+                    </div>
+                    <div class="search_icon_box" id="shopSearchBtn" style="cursor:pointer;">
+                        <img src="../public/images/icons/search.svg" alt="Search">
+                    </div>
+                </div>
+                <div class="nav_top_menu">
+                    <a href="../order/cart.html">
+                        <div class="top_menu_box">
+                            <div class="box_icon_box">
+                                <img src="../public/images/icons/heart.svg" alt="Wishlist">
+                            </div>
+                            <div class="box_info_box">
+                                <span>Wishlist</span>
+                                <strong>My Item</strong>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../other/login.html">
+                        <div class="top_menu_box">
+                            <div class="box_icon_box">
+                                <img src="../public/images/icons/profile.svg" alt="Account">
+                            </div>
+                            <div class="box_info_box">
+                                <span>Sign In</span>
+                                <strong>Account</strong>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../order/cart.html">
+                        <div class="top_menu_box">
+                            <div class="box_icon_box">
+                                <div class="basket_count" id="navBasketCount">2</div>
+                                <img src="../public/images/icons/shopping-cart.svg" alt="Cart">
+                            </div>
+                            <div class="box_info_box">
+                                <span id="navBasketTotal">$200.99</span>
+                                <strong>Total</strong>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="navbar_bott">
+                <div class="navbat_bott_menu_box">
+                    <div class="browse_box">
+                        <img src="../public/images/icons/browse.svg" alt="Browse">
+                        <span>Browse Categories</span>
+                    </div>
+                    <div class="navbar_route_menu">
+                        <a href="../index.html">Home</a>
+                        <a href="all.html" class="title">Shop</a>
+                        <a href="../order/cart.html">Orders</a>
+                        <a href="../other/about.html">About</a>
+                        <a href="../other/contact.html">Contact</a>
+                    </div>
+                    <div class="sorting_menu">
+                        <span>Deal of the Day</span>
+                        <span>Hot Deals</span>
+                        <span>Best Sellers</span>
+                        <span>New Arrivals</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Shop Page -->
+    <div class="product_page">
+        <div class="breadcrumb_frame">
+            <div class="container">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span class="current">Electronics &amp; Shop</span>
+            </div>
+        </div>
+
+        <div class="shop_banner_frame">
+            <div class="container">
+                <div class="shop_banner_box">
+                    <span class="tag">Season Sale</span>
+                    <h1>Save up to $130 on select laptops.</h1>
+                    <p>All kinds of laptops, smartwatches, TVs, and accessories with free shipping over $200.</p>
+                    <a href="#productGrid" class="btn_shop">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="brands_bar">
+            <div class="container">
+                <div class="brands_title">Top Brands</div>
+                <div class="brands_list">
+                    <button class="brand_pill active" data-brand="all">All Brands</button>
+                    <button class="brand_pill" data-brand="Apple">Apple</button>
+                    <button class="brand_pill" data-brand="Samsung">Samsung</button>
+                    <button class="brand_pill" data-brand="Sony">Sony</button>
+                    <button class="brand_pill" data-brand="LG">LG</button>
+                    <button class="brand_pill" data-brand="ASUS">ASUS</button>
+                    <button class="brand_pill" data-brand="Acer">Acer</button>
+                    <button class="brand_pill" data-brand="Canon">Canon</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="shop_main_frame">
+            <div class="container">
+                <!-- Sidebar -->
+                <aside class="shop_sidebar">
+                    <div class="filter_group">
+                        <div class="filter_header">
+                            <span>Department</span>
+                        </div>
+                        <div class="filter_options">
+                            <div class="filter_option">
+                                <label><input type="radio" name="category" value="all" checked> All Products</label>
+                                <span class="count">12</span>
+                            </div>
+                            <div class="filter_option">
+                                <label><input type="radio" name="category" value="laptops"> Laptops &amp; Computers</label>
+                                <span class="count">4</span>
+                            </div>
+                            <div class="filter_option">
+                                <label><input type="radio" name="category" value="tv"> TV &amp; Home Theatre</label>
+                                <span class="count">3</span>
+                            </div>
+                            <div class="filter_option">
+                                <label><input type="radio" name="category" value="headphones"> Headphones &amp; Audio</label>
+                                <span class="count">2</span>
+                            </div>
+                            <div class="filter_option">
+                                <label><input type="radio" name="category" value="watches"> Watches &amp; Cameras</label>
+                                <span class="count">3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter_group">
+                        <div class="filter_header">
+                            <span>Price</span>
+                        </div>
+                        <div class="price_inputs">
+                            <input type="number" id="minPrice" placeholder="Min ($)" min="0">
+                            <span>-</span>
+                            <input type="number" id="maxPrice" placeholder="Max ($)" min="0">
+                        </div>
+                    </div>
+
+                    <div class="filter_group">
+                        <div class="filter_header">
+                            <span>Color</span>
+                        </div>
+                        <div class="color_swatches">
+                            <div class="color_swatch active" style="background:#111827;" title="Black"></div>
+                            <div class="color_swatch" style="background:#d1d5db;" title="Silver"></div>
+                            <div class="color_swatch" style="background:#443297;" title="Purple"></div>
+                            <div class="color_swatch" style="background:#2563eb;" title="Blue"></div>
+                            <div class="color_swatch" style="background:#f5c34b;" title="Gold"></div>
+                        </div>
+                    </div>
+
+                    <div class="filter_group">
+                        <div class="filter_header">
+                            <span>Customer Rating</span>
+                        </div>
+                        <div class="filter_options">
+                            <div class="filter_option">
+                                <label><input type="checkbox" checked> 5 Stars</label>
+                                <span class="count">12</span>
+                            </div>
+                            <div class="filter_option">
+                                <label><input type="checkbox"> 4 Stars &amp; Up</label>
+                                <span class="count">12</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="filter_reset_btn" id="resetFiltersBtn">Reset All Filters</button>
+                </aside>
+
+                <!-- Product Grid -->
+                <main class="shop_content">
+                    <div class="shop_toolbar">
+                        <div class="shop_result_count">Showing <strong id="visibleCount">12</strong> of <strong>12</strong> results</div>
+                        <div class="shop_sort_box">
+                            <span>Sort by:</span>
+                            <select id="sortSelect">
+                                <option value="default">Default Sorting</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="all_products_grid" id="productGrid">
+                        <!-- Product 1 -->
+                        <div class="shop_product_card" data-category="laptops" data-brand="Apple" data-price="1999">
+                            <div class="shop_card_img">
+                                <span class="shop_card_badge">Best Seller</span>
+                                <a href="chosenproduct.html"><img src="../public/images/products/macbook_16.png" alt="Apple MacBook Pro 16"></a>
+                                <div class="shop_card_actions">
+                                    <button class="btn_add_cart_sm" data-id="macbook-16" data-name="Apple MacBook Pro 16-inch M2 Max" data-price="1999" data-img="../public/images/products/macbook_16.png">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="shop_card_body">
+                                <span class="shop_card_brand">Apple</span>
+                                <a href="chosenproduct.html" class="shop_card_title">Apple MacBook Pro 16-inch 1TB Space Gray</a>
+                                <div class="shop_card_reviews">
+                                    <img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt="">
+                                    <span>(3,014)</span>
+                                </div>
+                                <div class="shop_card_price"><strong>$1,999.00</strong><span>$2,199.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="shop_product_card" data-category="laptops" data-brand="ASUS" data-price="899">
+                            <div class="shop_card_img">
+                                <a href="chosenproduct.html"><img src="../public/images/products/asus_laptop.png" alt="ASUS VivoBook"></a>
+                                <div class="shop_card_actions">
+                                    <button class="btn_add_cart_sm" data-id="asus-laptop" data-name="ASUS VivoBook 15.6 FHD Laptop" data-price="899" data-img="../public/images/products/asus_laptop.png">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="shop_card_body">
+                                <span class="shop_card_brand">ASUS</span>
+                                <a href="chosenproduct.html" class="shop_card_title">ASUS VivoBook 15.6" FHD Intel Core i7 Laptop</a>
+                                <div class="shop_card_reviews">
+                                    <img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt="">
+                                    <span>(1,420)</span>
+                                </div>
+                                <div class="shop_card_price"><strong>$899.00</strong><span>$999.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="shop_product_card" data-category="laptops" data-brand="Acer" data-price="749">
+                            <div class="shop_card_img">
+                                <span class="shop_card_badge">-15%</span>
+                                <a href="chosenproduct.html"><img src="../public/images/products/nitro_laptop.png" alt="Acer Nitro 5"></a>
+                                <div class="shop_card_actions">
+                                    <button class="btn_add_cart_sm" data-id="acer-nitro" data-name="Acer Nitro 5 Gaming Laptop" data-price="749" data-img="../public/images/products/nitro_laptop.png">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="shop_card_body">
+                                <span class="shop_card_brand">Acer</span>
+                                <a href="chosenproduct.html" class="shop_card_title">Acer Nitro 5 15.6" Gaming Laptop RTX 3050</a>
+                                <div class="shop_card_reviews">
+                                    <img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt="">
+                                    <span>(980)</span>
+                                </div>
+                                <div class="shop_card_price"><strong>$749.00</strong><span>$879.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="shop_product_card" data-category="laptops" data-brand="Sony" data-price="520">
+                            <div class="shop_card_img">
+                                <a href="chosenproduct.html"><img src="../public/images/products/sony_notebook.png" alt="Chromebook"></a>
+                                <div class="shop_card_actions">
+                                    <button class="btn_add_cart_sm" data-id="sony-notebook" data-name="SAMSUNG Chromebook 4+ 15.6" data-price="520" data-img="../public/images/products/sony_notebook.png">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="shop_card_body">
+                                <span class="shop_card_brand">Samsung</span>
+                                <a href="chosenproduct.html" class="shop_card_title">SAMSUNG Chromebook 4+ 15.6" Intel Celeron</a>
+                                <div class="shop_card_reviews">
+                                    <img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt="">
+                                    <span>(612)</span>
+                                </div>
+                                <div class="shop_card_price"><strong>$520.00</strong><span>$599.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="shop_product_card" data-category="tv" data-brand="Samsung" data-price="649">
+                            <div class="shop_card_img">
+                                <a href="chosenproduct.html"><img src="../public/images/products/samsung_tv.png" alt="Samsung 58 TV"></a>
+                                <div class="shop_card_actions">
+                                    <button class="btn_add_cart_sm" data-id="samsung-tv" data-name="Samsung 58 4K UHD Smart TV" data-price="649" data-img="../public/images/products/samsung_tv.png">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="shop_card_body">
+                                <span class="shop_card_brand">Samsung</span>
+                                <a href="chosenproduct.html" class="shop_card_title">Samsung 58" 4K UHD HDR LED Tizen Smart TV</a>
+                                <div class="shop_card_reviews">
+                                    <img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt="">
+                                    <span>(2,150)</span>
+                                </div>
+                                <div class="shop_card_price"><strong>$649.00</strong><span>$799.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="shop_product_card" data-category="tv" data-brand="LG" data-price="1199">
+                            <div class="shop_card_img">
+                                <span class="shop_card_badge">OLED</span>
+                                <a href="chosenproduct.html"><img src="../public/images/products/LG-OLED.png" alt="LG OLED TV"></a>
+                                <div class="shop_card_actions">
+                                    <button class="btn_add_cart_sm" data-id="lg-oled" data-name="LG 55 4K UHD OLED Smart TV" data-price="1199" data-img="../public/images/products/LG-OLED.png">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="shop_card_body">
+                                <span class="shop_card_brand">LG</span>
+                                <a href="chosenproduct.html" class="shop_card_title">LG 55" 4K UHD HDR OLED webOS Smart TV</a>
+                                <div class="shop_card_reviews">
+                                    <img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt="">
+                                    <span>(1,840)</span>
+                                </div>
+                                <div class="shop_card_price"><strong>$1,199.00</strong><span>$1,399.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product 7 -->
+                        <div class="shop_product_card" data-category="tv" data-brand="Sony" data-price="949">
+                            <div class="shop_card_img">
+                                <a href="chosenproduct.html"><img src="../public/images/products/SONY-TV.png" alt="Sony Bravia"></a>
+                                <div class="shop_card_actions">
+                                    <button class="btn_add_cart_sm" data-id="sony-tv" data-name="Sony X85J 65 4K Smart Google TV" data-price="949" data-img="../public/images/products/SONY-TV.png">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="shop_card_body">
+                                <span class="shop_card_brand">Sony</span>
+                                <a href="chosenproduct.html" class="shop_card_title">Sony X85J 65" 4K UHD HDR LED Smart Google TV</a>
+                                <div class="shop_card_reviews">
+                                    <img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt="">
+                                    <span>(1,290)</span>
+                                </div>
+                                <div class="shop_card_price"><strong>$949.00</strong><span>$1,099.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product 8 -->
+                        <div class="shop_product_card" data-category="headphones" data-brand="Sony" data-price="249">
+                            <div class="shop_card_img">
+                                <a href="chosenproduct.html"><img src="../public/images/products/sony_headphone.png" alt="Sony Headphones"></a>
+                                <div class="shop_card_actions">
+                                    <button class="btn_add_cart_sm" data-id="sony-wh" data-name="Sony WH-1000XM5 Wireless Headphones" data-price="249" data-img="../public/images/products/sony_headphone.png">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="shop_card_body">
+                                <span class="shop_card_brand">Sony</span>
+                                <a href="chosenproduct.html" class="shop_card_title">Sony WH-1000XM5 Noise Canceling Headphones</a>
+                                <div class="shop_card_reviews">
+                                    <img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt="">
+                                    <span>(3,014)</span>
+                                </div>
+                                <div class="shop_card_price"><strong>$249.00</strong><span>$349.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product 9 -->
+                        <div class="shop_product_card" data-category="headphones" data-brand="Apple" data-price="149">
+                            <div class="shop_card_img">
+                                <a href="chosenproduct.html"><img src="../public/images/products/headphone_big.png" alt="Beats Studio Buds"></a>
+                                <div class="shop_card_actions">
+                                    <button class="btn_add_cart_sm" data-id="beats-buds" data-name="Beats Studio Buds Moon Gray" data-price="149" data-img="../public/images/products/headphone_big.png">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="shop_card_body">
+                                <span class="shop_card_brand">Apple</span>
+                                <a href="chosenproduct.html" class="shop_card_title">Beats Studio Buds True Wireless - Moon Gray</a>
+                                <div class="shop_card_reviews">
+                                    <img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt="">
+                                    <span>(870)</span>
+                                </div>
+                                <div class="shop_card_price"><strong>$149.00</strong><span>$179.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product 10 -->
+                        <div class="shop_product_card" data-category="watches" data-brand="Apple" data-price="279">
+                            <div class="shop_card_img">
+                                <a href="chosenproduct.html"><img src="../public/images/products/watch.png" alt="Apple Watch SE"></a>
+                                <div class="shop_card_actions">
+                                    <button class="btn_add_cart_sm" data-id="apple-watch-se" data-name="Apple Watch SE GPS 40mm" data-price="279" data-img="../public/images/products/watch.png">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="shop_card_body">
+                                <span class="shop_card_brand">Apple</span>
+                                <a href="chosenproduct.html" class="shop_card_title">Apple Watch SE (GPS) 40mm Space Grey Aluminum</a>
+                                <div class="shop_card_reviews">
+                                    <img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt="">
+                                    <span>(3,014)</span>
+                                </div>
+                                <div class="shop_card_price"><strong>$279.00</strong><span>$329.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product 11 -->
+                        <div class="shop_product_card" data-category="watches" data-brand="Canon" data-price="479">
+                            <div class="shop_card_img">
+                                <a href="chosenproduct.html"><img src="../public/images/products/canon_camera.png" alt="Canon EOS"></a>
+                                <div class="shop_card_actions">
+                                    <button class="btn_add_cart_sm" data-id="canon-t100" data-name="Canon EOS Rebel T100 DSLR Camera" data-price="479" data-img="../public/images/products/canon_camera.png">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="shop_card_body">
+                                <span class="shop_card_brand">Canon</span>
+                                <a href="chosenproduct.html" class="shop_card_title">Canon EOS Rebel T100 Digital SLR Camera Kit</a>
+                                <div class="shop_card_reviews">
+                                    <img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt="">
+                                    <span>(1,120)</span>
+                                </div>
+                                <div class="shop_card_price"><strong>$479.00</strong><span>$549.00</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product 12 -->
+                        <div class="shop_product_card" data-category="watches" data-brand="Sony" data-price="499">
+                            <div class="shop_card_img">
+                                <span class="shop_card_badge">Hot Deal</span>
+                                <a href="chosenproduct.html"><img src="../public/images/products/sony_playstation.png" alt="PlayStation 5"></a>
+                                <div class="shop_card_actions">
+                                    <button class="btn_add_cart_sm" data-id="ps5-console" data-name="Sony PlayStation 5 Video Game Console" data-price="499" data-img="../public/images/products/sony_playstation.png">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="shop_card_body">
+                                <span class="shop_card_brand">Sony</span>
+                                <a href="chosenproduct.html" class="shop_card_title">Sony PlayStation 5 Video Game Console</a>
+                                <div class="shop_card_reviews">
+                                    <img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt=""><img src="../public/images/icons/review.svg" alt="">
+                                    <span>(4,520)</span>
+                                </div>
+                                <div class="shop_card_price"><strong>$499.00</strong><span>$549.00</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shop_pagination">
+                        <button class="page_btn active">1</button>
+                        <button class="page_btn">2</button>
+                        <button class="page_btn">3</button>
+                        <button class="page_btn">&rarr;</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer_frame">
+        <div class="container">
+            <div class="footer_top">
+                <div class="footer_contact_box">
+                    <span class="footer_contact_title">Contact Us</span>
+                    <div class="footer_contact_main">
+                        <img src="../public/images/icons/phone-call.svg" alt="">
+                        <div>
+                            <strong>Monday-Friday: 08am-9pm</strong>
+                            <span>+(1) 123 456 7890</span>
+                        </div>
+                    </div>
+                    <div class="footer_contact_main">
+                        <img src="../public/images/icons/email.svg" alt="">
+                        <div>
+                            <strong>Need help with your order?</strong>
+                            <span>support@zenmart.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_support_box">
+                    <span class="footer_contact_title">Consumer Support</span>
+                    <a href="../other/contact.html">Contact Us</a>
+                    <a href="../other/about.html">About Zenmart</a>
+                    <a href="../order/cart.html">My Cart</a>
+                    <a href="../order/checkout.html">Checkout</a>
+                    <a href="../other/login.html">My Account</a>
+                </div>
+                <div class="footer_support_box">
+                    <span class="footer_contact_title">Services</span>
+                    <a href="all.html">All Products</a>
+                    <a href="chosenproduct.html">Featured Item</a>
+                    <a href="../order/received.html">Order Tracking</a>
+                    <a href="../other/about.html">Returns &amp; Exchanges</a>
+                    <a href="../other/contact.html">Help Centre</a>
+                </div>
+                <div class="footer_media_box">
+                    <div class="footer_media_main">
+                        <span class="footer_contact_title">Follow Us</span>
+                        <div>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-linkedin"></i>
+                        </div>
+                    </div>
+                    <div class="footer_media_main" style="margin-top: 30px;">
+                        <span class="footer_contact_title">Mobile Apps</span>
+                        <div class="mobile_app_box">
+                            <i class="fa-brands fa-apple"></i>
+                            <span>iOS App</span>
+                        </div>
+                        <div class="mobile_app_box">
+                            <i class="fa-brands fa-android"></i>
+                            <span>Android App</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_media_box" style="justify-content: flex-end; position:absolute; bottom: 175px; right: 200px;">
+                    <div class="footer_media_main">
+                        <span class="footer_contact_title">We Accept</span>
+                        <div class="cart_box">
+                            <img src="../public/images/icons/visa.png" alt="Visa">
+                            <img src="../public/images/icons/master_card.png" alt="Mastercard">
+                            <img src="../public/images/icons/apple_pay.png" alt="Apple Pay">
+                            <img src="../public/images/icons/dicvover.png" alt="Discover">
+                            <img src="../public/images/icons/paypal.png" alt="PayPal">
+                            <img src="../public/images/icons/amex.png" alt="Amex">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="footer_main">
+                    <div class="footer_bottom_left">
+                        <span>© 2026 Zenmart. All Rights Reserved</span>
+                        <span style="margin-left: 66px;">Privacy · Terms · Sitemap</span>
+                    </div>
+                    <div class="footer_bottom_right">
+                        <div class="footer_select_box">
+                            <span>Currency</span>
+                            <select><option value="usd" selected>USD</option></select>
+                        </div>
+                        <div class="footer_select_box" style="margin-left: 25px;">
+                            <span>Language</span>
+                            <select><option value="en" selected>English</option></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/js/main.js"></script>
+</body>
+</html>
